@@ -1,0 +1,16 @@
+{
+    "name": "burger",
+    "version": "0.0.1",
+    "description": "An application demonstrating the use of node.js, express.js and SQL together",
+    "main": "server.js",
+    "scripts": {},
+    "author": "Flowmar",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "express": "^4.15.3",
+        "express-handlebars": "^3.0.0",
+        "method-override": "^2.3.9",
+        "mysql": "^2.13.0"
+    }
+}
