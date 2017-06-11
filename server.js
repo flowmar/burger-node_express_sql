@@ -6,4 +6,6 @@ var bodyParser = require('body-parser');
 // Create instance of express application
 
 var app = express();
-const PORT = 3000;
+var PORT = process.enc.PORT || 3000;
+
+app.listen(PORT);

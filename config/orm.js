@@ -1,10 +1,12 @@
 // Require the information from the 'connection.js' file
 var connection = require('./connection.js');
 
+// Create SQL query functions in Object Relational Mapping format
 var orm = {
-    selectAll: function(table) {
-        var q = "SELECT * FROM ??";
-        connection.query(q, [table], function(err, result) {
+    // Function to show all 
+    selectAll: function() {
+        var q = "SELECT * FROM burgers";
+        connection.query(q, function(err, result) {
             console.log(result);
         });
     },
@@ -14,10 +16,13 @@ var orm = {
             console.log(result);
         });
     },
-    updateOne: function(burgerName, eaten) {
+    updateOne: function(burgerName) {
         var q = "UPDATE burgers SET devoured = true WHERE burger_name = ?";
         connection.query(q, [burgerName], function(err, result) {
             console.log(result);
         });
     }
 }
+
+// Export the orm as a module
+module.exports = orm;
