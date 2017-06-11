@@ -4,22 +4,23 @@ var connection = require('./connection.js');
 // Create SQL query functions in Object Relational Mapping format
 var orm = {
     // Function to show all 
-    selectAll: function() {
-        var q = "SELECT * FROM burgers";
+    all: function(cb) {
+        var q = "SELECT * FROM burgers;";
         connection.query(q, function(err, result) {
-            console.log(result);
+            cb(result);
         });
     },
-    insertOne: function(burgerName, eaten) {
-        var q = "INSERT INTO burgers (burger_name, devoured) VALUES (?,?)";
-        connection.query(q, [burgerName, eaten], function(err, result) {
-            console.log(result);
-        });
-    },
-    updateOne: function(burgerName) {
-        var q = "UPDATE burgers SET devoured = true WHERE burger_name = ?";
+    // Function to insert a new burger into the app
+    insert: function(burgerName, cb) {
+        var q = "INSERT INTO burgers (burger_name) VALUES (?);";
         connection.query(q, [burgerName], function(err, result) {
-            console.log(result);
+            cb(result);
+        });
+    },
+    update: function(burgerName) {
+        var q = "UPDATE burgers SET devoured = true WHERE burger_name = ?;";
+        connection.query(q, [burgerName], function(err, result) {
+            cb(result);
         });
     }
 }
