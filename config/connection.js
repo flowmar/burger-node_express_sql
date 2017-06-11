@@ -1,13 +1,18 @@
 // Require mysql
 var mysql = require('mysql');
+var connection;
 
 // Create connection between node.js and mysql
-var connection = mysql.connection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "burgers_db"
-});
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "burgers_db"
+    });
+}
 
 // If there is an error, pull the human readable part from the response stack
 connection.connect(function(err) {
