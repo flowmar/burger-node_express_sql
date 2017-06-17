@@ -3,7 +3,7 @@ var connection = require('./connection.js');
 
 // Create SQL query functions in Object Relational Mapping format
 var orm = {
-    // Function to show all 
+    // Function to show all
     all: function(cb) {
         var q = "SELECT * FROM burgers;";
         connection.query(q, function(err, result) {
