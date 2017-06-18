@@ -3,7 +3,9 @@
     "version": "0.0.1",
     "description": "An application demonstrating the use of node.js, express.js and SQL together",
     "main": "server.js",
-    "scripts": {},
+    "scripts": {
+        "start": "node server.js"
+    },
     "author": "Flowmar",
     "license": "MIT",
     "dependencies": {
@@ -13,8 +15,5 @@
         "express-handlebars": "^3.0.0",
         "method-override": "^2.3.9",
         "mysql": "^2.13.0"
-    },
-    "scripts": {
-        "start": "node server.js"
     }
 }

@@ -1,11 +1,45 @@
-<div class="container container-fluid">
+<div class="container container-fluid input-box">
     <div class="row">
-        <form class="col-lg-12" action="/new" method="POST">
-            <input type="text" id="burger" name="input">
+        <form class="col-lg-12" action="/add" method="POST">
+            <div class="col-md-11 col-md-offset-1 text-center">
+                <label for="burger">What kind of burger would you like??</label>
+                <input type="text" name="input_burger" id="burger" required>
+            </div>
         </form>
     </div>
-</div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+
+
+
+    <div class="row text-center">
+        {{#each burger}}
+            {{#unless this.devoured}}
+                <form class="col-lg-12" action="/update/{{this.id}}?_method=PUT" method="POST">
+                <div class="ordered-burger">{{this.burger_name}}
+                    <in
+                    <button type="submit" class="btn btn-primary btn-m"></button>
+               </div>
+                </form>
+            {{/unless}}
+        {{/each}}
+    </div>
+
+    <div class="col-lg-4">
+        <div class="col-lg-10 text-center">
+            {{#each burger}}
+                {{#if this.devoured}}
+                <form action="/delete/{{this.id}}?_method=PUT" method="POST">
+                <div class="ordered-burger">
+                    {{this.burger_name}}
+                </div>
+                <button class="btn btn-warning btn-lg" type="submit"></button>
+                </form>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+
+
+
+
+    </div>
