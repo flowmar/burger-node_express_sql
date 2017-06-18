@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'burgers_db'
+        database: 'burgersdb'
     });
 }
 
@@ -18,6 +18,7 @@ if (process.env.JAWSDB_URL) {
 connection.connect(function(err) {
     if (err) {
         console.error("Error connecting: " + err.stack);
+        return;
     }
     // Log the connection thread ID to the console
     console.log("Connected as id: " + connection.threadId);

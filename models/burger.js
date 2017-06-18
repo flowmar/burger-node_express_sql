@@ -6,19 +6,19 @@ var orm = require('../config/orm.js')
 var burger = {
     // Lists all burgers in the database
     all: function(cb) {
-        orm.all(function(res) {
+        orm.all("burgers", function(res) {
             cb(res);
         });
     },
     // Inserts a new row into the burgers database
-    insert: function(burgerName, cb) {
-        orm.insert(burgerName, function(res) {
+    insert: function(burger_name, cb) {
+        orm.insert(burger_name, function(res) {
             cb(res);
         });
     },
     // Updates a burger's 'devoured' status from false to true
-    update: function(burgerName, cb) {
-        orm.update(burgerName, function(res) {
+    update: function(burger_name, cb) {
+        orm.update(burger_name, function(res) {
             cb(res);
         });
     }

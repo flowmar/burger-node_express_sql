@@ -3,6 +3,7 @@ var express = require("express");
 var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 var path = require("path");
+var morgan  = require("morgan");
 
 // Create instance of express application
 var app = express();
@@ -12,6 +13,7 @@ var PORT = process.env.PORT || 3000;
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
+app.use(morgan("short"));
 
 // Set Handlebars
 var exphbs = require("express-handlebars");

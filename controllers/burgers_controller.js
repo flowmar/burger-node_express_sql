@@ -15,13 +15,13 @@ router.get("/", function(req, res) {
         });
     });
 
-router.post('/add', function(req, res) {
+router.post('/', function(req, res) {
     burger.insert(req.body.burger_name, function(data){
     res.redirect('/');
     });
 });
 
-router.put('/update/:id', function(req, res){
+router.put('/:id', function(req, res){
     var id = parseInt(req.params.id);
     burger.update(id, function(data){
         res.redirect('/');
