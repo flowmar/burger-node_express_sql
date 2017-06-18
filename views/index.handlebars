@@ -29,6 +29,9 @@
                 {{#if this.devoured}}
                 <form action="/delete/{{this.id}}?_method=PUT" method="POST">
                 <div class="ordered-burger">
+                    <script>
+                        console.log({{this.burger_name}});
+                    </script>
                     {{this.burger_name}}
                 </div>
                 <button class="btn btn-warning btn-lg" type="submit"></button>

@@ -2,9 +2,17 @@
 <html>
 
 	<head>
+			<script type="text/javascript">
+		var connection = new WebSocket('ws://localhost:62183');
+		connection.onmessage = function (e) {
+			location.reload();
+		};
+	</script>
+
 		<meta charset="utf-8">
 		<title>Burgerama</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="burger_style.css">
 	</head>
